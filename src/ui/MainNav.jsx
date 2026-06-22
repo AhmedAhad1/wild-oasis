@@ -1,5 +1,7 @@
 import styled from "styled-components";
-
+import React from "react";
+import Logo from "./Logo";
+import { NavLink } from "react-router-dom";
 const NavList = styled.ul`
   display: flex;
   flex-direction: column;
@@ -44,3 +46,67 @@ const Link = styled.a`
     color: var(--color-brand-600);
   }
 `;
+
+const MainNav = () => {
+  return (
+    <div className="flex flex-col  items-center">
+      <Logo />
+
+      <ul className="mt-6! space-y-3!">
+        <li className="">
+          <NavLink
+            to="/dashboard"
+            className={({ isActive }) =>
+              isActive ? " bg-gray-300 " : "text-black "
+            }
+          >
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to={"/bookings"}
+            className={({ isActive }) =>
+              isActive ? " bg-gray-300" : "text-black"
+            }
+          >
+            Bookings
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to={"/cabins"}
+            className={({ isActive }) =>
+              isActive ? " bg-gray-300" : "text-black"
+            }
+          >
+            Cabins
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to={"/users"}
+            className={({ isActive }) =>
+              isActive ? " bg-gray-300" : "text-black"
+            }
+          >
+            Users
+          </NavLink>
+        </li>
+
+        <li>
+          <NavLink
+            to={"/settings"}
+            className={({ isActive }) =>
+              isActive ? " bg-gray-300" : "text-black"
+            }
+          >
+            Settings
+          </NavLink>
+        </li>
+      </ul>
+    </div>
+  );
+};
+
+export default MainNav;
