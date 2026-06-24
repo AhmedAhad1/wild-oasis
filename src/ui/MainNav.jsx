@@ -57,7 +57,7 @@ const MainNav = () => {
           <NavLink
             to="/dashboard"
             className={({ isActive }) =>
-              isActive ? " bg-gray-300 " : "text-black "
+              isActive ? " bg-gray-300 " : "text-black"
             }
           >
             Home
